@@ -1,0 +1,16 @@
+Options +FollowSymLinks
+RewriteEngine On
+
+RewriteRule ^([a-zA-Z0-9_]+)$ /$1.php
+RewriteRule ^logout([/]?)$ /login.php?logout=1
+
+RewriteRule ^settings/categories([/]?)$ /set_categories.php
+RewriteRule ^settings/autodetect([/]?)$ /set_autodetect.php
+RewriteRule ^settings/user([/]?)$ /set_user.php
+RewriteRule ^settings/user/delete([/]?)$ /user_delete.php
+
+RewriteRule ^expenses/page([0-9]+)([/]?)$ /expenses.php?page=$1
+RewriteRule ^expenses/([0-9]+)([/]?)$ /edit.php?expense=$1
+RewriteRule ^expenses/([0-9]+)/delete([/]?)$ /delete.php?expense=$1
+
+RewriteRule ^stats/page([0-9]+)([/]?)$ /stats.php?page=$1

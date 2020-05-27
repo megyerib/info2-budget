@@ -1,0 +1,77 @@
+body {
+    background-color:#DDD;
+    color: #444;
+    width:800px;
+    margin:auto;
+    margin-top:10px;
+    font-family: "Trebuchet MS", Helvetica, sans-serif;
+    position:relative;
+}
+
+div {
+    overflow: auto;
+}
+
+a {
+    color: darkorange;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration:underline;
+    color: #24af61;
+}
+
+div#main {
+    background-color:white;
+    border:1px solid grey;
+    padding:10px;
+}
+
+div#menuBar {
+    background-color:orange;
+    margin-bottom:10px;
+    border:1px solid darkorange;
+    overflow:visible; /* Dropdown elemek miatt */
+}
+
+h1#title {
+    color:darkorange;
+    text-align: center;
+    margin-bottom:10px;
+}
+
+div#credits {
+    padding:10px;
+    color:grey;
+}
+
+p:first-child, h1:first-child, h2:first-child, h3:first-child {
+    margin-top:0;
+}
+
+p:last-child, form:last-child {
+    margin-bottom:0;
+}
+
+table {
+    border-collapse: collapse;
+}
+
+/* Táblázatok */
+tr:nth-child(even)      {background-color:#DDD;} /* Minden 2. sor szürke */
+td.tableEdit a          {visibility: hidden;}
+tr:hover                {background-color:darkorange;}
+tr:hover td.tableEdit a {color:white;visibility: visible;}
+tr:first-child          {background:none;} /* Táblázat fejlécei */
+
+label {
+    display:inline-block;
+    width:120px;
+}
+
+div.highlight {
+    background-color: #24af61;
+    color:white;
+    padding:10px;
+}

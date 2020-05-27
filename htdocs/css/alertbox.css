@@ -1,0 +1,31 @@
+@keyframes fadeout {
+	0%   {opacity: 1;}
+	100% {opacity: 0;}
+}
+#alertbox {
+	z-index:1;
+
+	animation: fadeout 1s ease-in-out 3s forwards;
+
+	width:300px;
+	position:fixed;
+	top:20px;
+	right:50%;
+    margin-right:-150px; /* középre zárós magic */
+	text-align:center;
+
+	padding:10px;
+	border-radius:3px;
+}
+
+.alert {
+	background-color: #24af61;
+	border: 1px solid #0c3a20;
+	color:white;
+}
+
+.error {
+	background-color: #D00;
+	border: 1px solid darkred;
+	color:white;
+}

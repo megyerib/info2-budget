@@ -1,0 +1,80 @@
+/* http://webdesignerhut.com/css-dropdown-menu/ */
+
+#relatedContent {
+  max-width: 800px;
+  margin: 200px auto;
+}
+
+#relatedContent .item {
+  max-width: 44%;
+  padding: 3%;
+  float: left;
+  text-align: center;
+}
+
+#relatedContent .item a img {
+  max-width: 100%;
+}
+
+nav ul {
+	padding:0;
+	margin:0;
+	list-style: none;
+	position: relative;
+	}
+
+nav ul li {
+	display:inline-block;
+}
+nav ul ul {
+    border:1px solid darkorange;
+}
+nav ul ul li {
+	/*background-color: #CCCCCC; /* boxes */
+	background-color: orange; /* boxes */
+}
+
+nav a, nav a:hover {
+	display:block;
+	padding:0 10px;
+	color:#FFF;
+	/*font-size:20px;*/
+	line-height: 28px; /* 1 */
+	text-decoration:none;
+}
+
+nav a:hover {
+	background-color: darkorange;
+}
+
+/* Hide Dropdowns by Default */
+nav ul ul {
+	display: none;
+	position: absolute;
+	top: 28px; /* 1 */
+}
+
+/* Display Dropdowns on Hover */
+nav ul li:hover > ul {
+	display:inherit;
+}
+
+/* Fisrt Tier Dropdown */
+nav ul ul li {
+	width:170px;
+	float:none;
+	display:list-item;
+	position: relative;
+}
+
+/* Second, Third and more Tiers	*/
+nav ul ul ul li {
+	position: relative;
+	top:-28px; /* -1 */
+	left:170px;
+}
+
+
+/* Change this in order to change the Dropdown symbol */
+li > a:after { content:  ' >'; }
+li > a:only-child:after { content: ''; }
