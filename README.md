@@ -1,0 +1,3 @@
+- [Videodokumentation (Youtube)](https://youtu.be/tVhjnyPattU)
+- [Dokumentation](https://github.com/m1eri/info2-budget/blob/master/htdocs/files/dokumentation.pdf)
+- [Beschreibung](https://github.com/m1eri/info2-budget/blob/master/htdocs/files/ghf.pdf)
