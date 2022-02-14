@@ -1,9 +1,9 @@
 <?php
-// HTTPS
-if($_SERVER["HTTPS"] != "on") {
+// HTTPS - Kivettem, mert valamit be kell állítani hozzá XAMPP-ben, de nincs kedvem megkeresni, hogy mit.
+/*if($_SERVER["HTTPS"] != "on") {
     header("Location: https://".$_SERVER["HTTP_HOST"].$_SERVER["REQUEST_URI"]);
     exit();
-}
+}*/
 
 session_start();
 
