@@ -113,10 +113,10 @@ if ($state == 'dbInsert') {
     $importOK = $importNOK = 0; // Sikeres/hibás beszúrások
 
     for ($i = 0; $i < count($_POST['date']); $i++) {
-        $insert_dat = mysql_real_escape_string($_POST['date'][$i]);
-        $insert_des = mysql_real_escape_string($_POST['description'][$i]);
-        $insert_cat = mysql_real_escape_string($_POST['category'][$i]);
-        $insert_mnt = mysql_real_escape_string($_POST['amount'][$i]);
+        $insert_dat = mysqli_real_escape_string($mysqli, $_POST['date'][$i]);
+        $insert_des = mysqli_real_escape_string($mysqli, $_POST['description'][$i]);
+        $insert_cat = mysqli_real_escape_string($mysqli, $_POST['category'][$i]);
+        $insert_mnt = mysqli_real_escape_string($mysqli, $_POST['amount'][$i]);
 
         $queryString =
             "INSERT INTO expense(date, description, category, amount, user)
@@ -124,9 +124,15 @@ if ($state == 'dbInsert') {
 
         // Duplikátummegelőzés miatt csak egyenként lehet beszúrni
         // http://stackoverflow.com/questions/8756689/avoiding-inserting-duplicate-rows-in-mysql
-        $insert = $mysqli->query($queryString);
+        $error = false;
+        try {
+            $insert = $mysqli->query($queryString);
+        }
+        catch (Exception $e) {
+        	$error = true;
+        }
 
-        if ($insert) $importOK++;
+        if (!$error) $importOK++;
         else $importNOK++;
     }
 

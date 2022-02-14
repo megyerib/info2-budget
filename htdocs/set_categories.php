@@ -7,7 +7,7 @@ changeTitle($pagetitle);
 
 // Új kat. felvétele
 if (isset($_POST['new_submit']) && !empty($_POST['new_submit'])) {
-    $newCat = mysql_real_escape_string($_POST['newCat']);
+    $newCat = mysqli_real_escape_string($mysqli, $_POST['newCat']);
     $insert = $mysqli->query(
         "INSERT INTO category(name, user)
         VALUES ('$newCat', $userNo)"
@@ -19,8 +19,8 @@ if (isset($_POST['new_submit']) && !empty($_POST['new_submit'])) {
 if (isset($_POST['catSave']) && count($_POST['catNo']) > 0) {
     $setQuery = "";
     for ($i = 0; $i < count($_POST['catNo']); $i++) {
-        $catNo   = mysql_real_escape_string($_POST['catNo'][$i]);
-        $catName = mysql_real_escape_string($_POST['catName'][$i]);
+        $catNo   = mysqli_real_escape_string($mysqli, $_POST['catNo'][$i]);
+        $catName = mysqli_real_escape_string($mysqli, $_POST['catName'][$i]);
         $setQuery .=
             "UPDATE category SET name = '$catName'
             WHERE no = $catNo AND user = $userNo;"; // Ne írja át másét

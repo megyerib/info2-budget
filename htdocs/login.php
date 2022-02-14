@@ -2,8 +2,8 @@
 if (isset($_POST['login'])) { // Megpróbáltak bejelentkezni
     include 'db.php';
 
-    $user = mysql_real_escape_string($_POST['user']);
-    $pass = mysql_real_escape_string($_POST['password']);
+    $user = mysqli_real_escape_string($mysqli, $_POST['user']);
+    $pass = mysqli_real_escape_string($mysqli, $_POST['password']);
 
     $mysqli->real_query(
         "SELECT *

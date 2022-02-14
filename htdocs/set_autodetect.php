@@ -7,7 +7,7 @@ changeTitle($pagetitle);
 
 // Új kat. felvétele
 if (isset($_POST['new_submit']) && !empty($_POST['new_submit'])) {
-    $newCat = mysql_real_escape_string($_POST['newCat']);
+    $newCat = mysqli_real_escape_string($mysqli, $_POST['newCat']);
     $C = $_POST['category'][0];
     $insert = $mysqli->query(
         "INSERT INTO category_detect(pattern, user, category)
@@ -20,9 +20,9 @@ if (isset($_POST['new_submit']) && !empty($_POST['new_submit'])) {
 if (isset($_POST['catSave']) && count($_POST['catNo']) > 0) {
     $setQuery = "";
     for ($i = 0; $i < count($_POST['catNo']); $i++) {
-        $catNo   = mysql_real_escape_string($_POST['catNo'][$i]);
-        $catName = mysql_real_escape_string($_POST['catName'][$i]);
-        $C       = mysql_real_escape_string($_POST['category'][$i]);
+        $catNo   = mysqli_real_escape_string($mysqli, $_POST['catNo'][$i]);
+        $catName = mysqli_real_escape_string($mysqli, $_POST['catName'][$i]);
+        $C       = mysqli_real_escape_string($mysqli, $_POST['category'][$i]);
         $setQuery .=
             "UPDATE category_detect SET pattern = '$catName', category = $C
             WHERE no = $catNo AND user = $userNo;"; // Ne írja át másét

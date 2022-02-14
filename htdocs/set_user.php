@@ -5,10 +5,10 @@ echo '<h2>Benutzereinstellungen</h2>';
 changeTitle('Benutzereinstellungen');
 
 if (isset($_POST['save'])) {
-    $name  = mysql_real_escape_string($_POST['name']);
-    $email = mysql_real_escape_string($_POST['email']);
-    $pw1   = mysql_real_escape_string($_POST['password1']);
-    $pw2   = mysql_real_escape_string($_POST['password2']);
+    $name  = mysqli_real_escape_string($mysqli, $_POST['name']);
+    $email = mysqli_real_escape_string($mysqli, $_POST['email']);
+    $pw1   = mysqli_real_escape_string($mysqli, $_POST['password1']);
+    $pw2   = mysqli_real_escape_string($mysqli, $_POST['password2']);
 
     $alertMsg = '';
     if (!preg_match("/^[\\p{L} .'-]+$/u", $name))

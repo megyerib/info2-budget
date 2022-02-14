@@ -13,10 +13,10 @@ else {
 
 // Mentés
 if (isset($_POST['save']) || isset($_POST['savequit'])) {
-    $desc = mysql_real_escape_string($_POST['description']);
-    $date = mysql_real_escape_string($_POST['date']);
-    $cat  = mysql_real_escape_string($_POST['category'][0]);
-    $amnt = mysql_real_escape_string($_POST['amount']);
+    $desc = mysqli_real_escape_string($mysqli, $_POST['description']);
+    $date = mysqli_real_escape_string($mysqli, $_POST['date']);
+    $cat  = mysqli_real_escape_string($mysqli, $_POST['category'][0]);
+    $amnt = mysqli_real_escape_string($mysqli, $_POST['amount']);
 
     $save = $mysqli->query(
         "UPDATE expense
