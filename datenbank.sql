@@ -30,7 +30,7 @@ CREATE TABLE `category` (
   `no` int(11) NOT NULL,
   `name` varchar(50) NOT NULL,
   `user` int(4) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- A tábla adatainak kiíratása `category`
@@ -55,7 +55,7 @@ CREATE TABLE `category_detect` (
   `category` int(11) NOT NULL,
   `pattern` varchar(100) NOT NULL,
   `user` int(4) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- A tábla adatainak kiíratása `category_detect`
@@ -65,7 +65,7 @@ INSERT INTO `category_detect` (`no`, `category`, `pattern`, `user`) VALUES
 (1, 2, '/spar/', 0),
 (2, 5, '/muszaki/', 0),
 (3, 2, '/stoczek/', 0),
-(9, 4, '/schÃ¶nherz/', 1),
+(9, 4, '/schönherz/', 1),
 (10, 3, '/(.*)uszoda(.*)/i', 1),
 (11, 12, '/munka/', 1);
 
@@ -82,7 +82,7 @@ CREATE TABLE `expense` (
   `amount` int(11) NOT NULL,
   `date` date NOT NULL,
   `user` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- A tábla adatainak kiíratása `expense`
@@ -145,18 +145,18 @@ INSERT INTO `expense` (`no`, `description`, `category`, `amount`, `date`, `user`
 (101, '', 0, -200, '2016-01-24', 1),
 (55, '', 0, 0, '2016-01-25', 1),
 (164, '', 0, 0, '2016-05-08', 1),
-(121, 'BME SchÃ¶nherz ZoltÃ¡n KollÃ©gium', 4, -9320, '2015-12-05', 1),
-(122, 'BME SchÃ¶nherz ZoltÃ¡n KollÃ©gium', 4, -9320, '2016-01-05', 1),
-(123, 'BME SchÃ¶nherz ZoltÃ¡n KollÃ©gium', 4, -9320, '2016-02-05', 1),
-(124, 'BME SchÃ¶nherz ZoltÃ¡n KollÃ©gium', 4, -9320, '2016-03-05', 1),
-(125, 'BME SchÃ¶nherz ZoltÃ¡n KollÃ©gium', 4, -9320, '2016-04-05', 1),
-(126, 'BME SchÃ¶nherz ZoltÃ¡n KollÃ©gium', 4, -9320, '2016-05-05', 1),
-(115, 'Budapesti MÅ±szaki Ã©s GazdasÃ¡gtudomÃ¡nyi Egyetem', 5, 12000, '2015-12-05', 1),
-(116, 'Budapesti MÅ±szaki Ã©s GazdasÃ¡gtudomÃ¡nyi Egyetem', 5, 12000, '2016-01-05', 1),
-(117, 'Budapesti MÅ±szaki Ã©s GazdasÃ¡gtudomÃ¡nyi Egyetem', 5, 12000, '2016-02-05', 1),
-(118, 'Budapesti MÅ±szaki Ã©s GazdasÃ¡gtudomÃ¡nyi Egyetem', 5, 12000, '2016-03-05', 1),
-(119, 'Budapesti MÅ±szaki Ã©s GazdasÃ¡gtudomÃ¡nyi Egyetem', 5, 12000, '2016-04-05', 1),
-(120, 'Budapesti MÅ±szaki Ã©s GazdasÃ¡gtudomÃ¡nyi Egyetem', 5, 12000, '2016-05-05', 1),
+(121, 'BME Schönherz Zoltán Kollégium', 4, -9320, '2015-12-05', 1),
+(122, 'BME Schönherz Zoltán Kollégium', 4, -9320, '2016-01-05', 1),
+(123, 'BME Schönherz Zoltán Kollégium', 4, -9320, '2016-02-05', 1),
+(124, 'BME Schönherz Zoltán Kollégium', 4, -9320, '2016-03-05', 1),
+(125, 'BME Schönherz Zoltán Kollégium', 4, -9320, '2016-04-05', 1),
+(126, 'BME Schönherz Zoltán Kollégium', 4, -9320, '2016-05-05', 1),
+(115, 'Budapesti Műszaki és Gazdaságtudományi Egyetem', 5, 12000, '2015-12-05', 1),
+(116, 'Budapesti Műszaki és Gazdaságtudományi Egyetem', 5, 12000, '2016-01-05', 1),
+(117, 'Budapesti Műszaki és Gazdaságtudományi Egyetem', 5, 12000, '2016-02-05', 1),
+(118, 'Budapesti Műszaki és Gazdaságtudományi Egyetem', 5, 12000, '2016-03-05', 1),
+(119, 'Budapesti Műszaki és Gazdaságtudományi Egyetem', 5, 12000, '2016-04-05', 1),
+(120, 'Budapesti Műszaki és Gazdaságtudományi Egyetem', 5, 12000, '2016-05-05', 1),
 (127, 'gyakornoki munka', 12, 100000, '2015-12-05', 1),
 (128, 'gyakornoki munka', 12, 100000, '2016-01-05', 1),
 (129, 'gyakornoki munka', 12, 100000, '2016-02-05', 1),
@@ -224,7 +224,7 @@ CREATE TABLE `user` (
   `password` char(40) NOT NULL,
   `name` varchar(50) NOT NULL,
   `email` varchar(100) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- A tábla adatainak kiíratása `user`
